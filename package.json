@@ -1,0 +1,26 @@
+{
+  "name": "Neliusic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/opus": "^0.6.0",
+    "@discordjs/voice": "^0.6.0",
+    "@distube/soundcloud": "^0.2.2",
+    "@distube/spotify": "^0.6.3",
+    "axios": "^0.21.4",
+    "discord.js": "^13.1.0",
+    "distube": "^3.0.0-beta.38",
+    "dotenv": "^10.0.0",
+    "node": "16.6.1",
+    "tweetnacl": "^1.0.3",
+    "ytdl-core": "^4.9.1"
+  }
+}
