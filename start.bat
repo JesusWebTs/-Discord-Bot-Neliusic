@@ -1,3 +1,3 @@
 ECHO off
-START npm start
+START heroku run npm start
 
