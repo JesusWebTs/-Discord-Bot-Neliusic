@@ -8,6 +8,7 @@ const skip = require("./skip");
 const stop = require("./stop");
 const resume = require("./resume");
 const lyrics = require("./lyrics");
+const mko = require("./mko");
 
 module.exports = {
   play: playMusic,
@@ -24,4 +25,5 @@ module.exports = {
   resume: resume,
   /* leave: leave, */
   lyrics: lyrics,
+  mko: mko,
 };
