@@ -1,7 +1,6 @@
 const http = require("http");
 
 const port = process.env.PORT || 3000;
-const host = process.env.HOST || "localhost";
 
 const runServer = () => {
   const server = http.createServer((req, res) => {
@@ -15,8 +14,8 @@ const runServer = () => {
     );
   });
 
-  server.listen(port, host, () => {
-    console.log(`Server running at port: ${port} in ${host}`);
+  server.listen(port, () => {
+    console.log(`Server running at port: ${port}`);
     console.log(`[Node] Neliusic started`);
   });
 };
