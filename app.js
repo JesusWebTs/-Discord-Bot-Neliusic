@@ -2,8 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const morgan = require("morgan");
 const { currentEnv } = require("./config");
-const { itemRouter } = require("./routes");
-require("./model/_conn");
+const router = require("./routes");
+const repositories = require("./repositories");
+const botStart = require("./bot");
+
+require("./model/_conn")
+  .then(() => {
+    botStart({ repositoresConnection: repositories });
+  })
+  .catch((err) => {
+    console.log("[Node Error]", err);
+  });
 
 const app = express();
 
@@ -14,6 +23,6 @@ app
   .use(cors())
   .use(express.urlencoded({ extended: true }))
   .use(express.json())
-  .use("/api", itemRouter);
+  .use("/api", router);
 
 module.exports = { app };

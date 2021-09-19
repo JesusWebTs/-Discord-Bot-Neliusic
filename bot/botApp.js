@@ -2,7 +2,7 @@ const { Client, Intents } = require("discord.js");
 const COMMANDS = require("./commands.js");
 const distube = require("./distube");
 
-const startBot = ({ repositoresConnection = {} }) => {
+const bot = ({ repositoresConnection = {} }) => {
   const client = new Client({
     intents: [
       Intents.FLAGS.GUILDS,
@@ -16,7 +16,7 @@ const startBot = ({ repositoresConnection = {} }) => {
   distube(client);
   const COMMAND_START = ".n";
   client.on("ready", () => {
-    console.log("I'm Ready");
+    console.log("[Niusic] I'm ready for commands!");
   });
   client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
@@ -45,4 +45,4 @@ const startBot = ({ repositoresConnection = {} }) => {
   return client;
 };
 
-module.exports = startBot;
+module.exports = bot;

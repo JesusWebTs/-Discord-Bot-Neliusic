@@ -1,4 +1,4 @@
-const join = require("../joinChannel");
+const join = require("../../general/joinChannel");
 
 module.exports = async ({ message, client, args }) => {
   const cancion = args.join(" ");
