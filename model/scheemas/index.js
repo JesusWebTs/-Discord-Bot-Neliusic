@@ -1,5 +1,9 @@
-const ItemSchema = require("./item.schema");
+const UsersSchema = require("./user.schema");
+const BotSchema = require("./bot.schema");
+const ServerSchema = require("./sever.schema");
 
 module.exports = {
-  ItemSchema,
+  UsersSchema,
+  BotSchema,
+  ServerSchema,
 };

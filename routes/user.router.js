@@ -1,12 +1,12 @@
 const { Router } = require("express");
 const router = Router();
-const { ItemController } = require("../controller");
+const { UsersController } = require("../controller");
 
 router
-  .get("/items", ItemController.getAllItem)
-  .get("/items/:id", ItemController.getOneItem)
-  .post("/items", ItemController.createOneItem)
-  .put("/items", ItemController.updateOneItem)
-  .delete("/items", ItemController.deleteOneItem);
+  .get("/users", UsersController.getAllBot)
+  .get("/users/:id", UsersController.getOneBot)
+  .post("/users", UsersController.createOneBot)
+  .put("/users", UsersController.updateOneBot)
+  .delete("/users", UsersController.deleteOneBot);
 
 module.exports = router;

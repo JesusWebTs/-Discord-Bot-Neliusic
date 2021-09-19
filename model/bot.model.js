@@ -1,6 +1,5 @@
 const { model } = require("mongoose");
-const { ItemSchema } = require("./scheemas");
+const { BotSchema } = require("./scheemas");
+const BotModel = model("bot", BotSchema);
 
-const ItemModel = model("item", ItemSchema);
-
-module.exports = ItemModel;
+module.exports = BotModel;

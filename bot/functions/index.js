@@ -4,8 +4,8 @@ const generalCommands = require("./general");
 const musicCommands = require("./music");
 
 module.exports = {
-  ...entertaimentCommands,
-  ...financesCommands,
-  ...generalCommands,
-  ...musicCommands,
+  ...entertaimentCommands.commands,
+  ...financesCommands.commands,
+  ...generalCommands.commands,
+  ...musicCommands.commands,
 };

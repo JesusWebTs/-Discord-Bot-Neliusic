@@ -1,8 +1,8 @@
 const { Schema } = require("mongoose");
 
-const ItemSchema = new Schema({
+const UsersSchema = new Schema({
   title: "string",
   content: "string",
 });
 
-module.exports = ItemSchema;
+module.exports = UsersSchema;

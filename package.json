@@ -25,7 +25,6 @@
     "morgan": "^1.10.0",
     "node": "16.6.1",
     "opusscript": "0.0.8",
-    "pm2": "^5.1.1",
     "tweetnacl": "^1.0.3",
     "ytdl-core": "^4.9.1"
   }

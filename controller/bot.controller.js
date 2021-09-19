@@ -1,9 +1,9 @@
-const { UsersRepositories } = require("../repositories");
+const { BotRepositories } = require("../repositories");
 
-class ItemController {
+class BotController {
   static getOneBot = async (req, res, next) => {
     const { id } = req.params;
-    return UsersRepositories.getOneUsers({ id })
+    return BotRepositories.getOneBot({ id })
       .then((item) => {
         if (item) {
           return res.status(200).json(item);
@@ -20,7 +20,7 @@ class ItemController {
   };
 
   static getAllBot = async (req, res, next) => {
-    return UsersRepositories.getAllUsers()
+    return BotRepositories.getAllBot()
       .then((items) => {
         if (items) {
           return res.status(200).json(items);
@@ -38,7 +38,7 @@ class ItemController {
 
   static createOneBot = async (req, res, next) => {
     const { body } = req;
-    return UsersRepositories.createOneUsers({ body })
+    return BotRepositories.createOneBot({ body })
       .then((data) => {
         if (data) {
           return res.status(201).json(data);
@@ -58,4 +58,4 @@ class ItemController {
   static deleteOneBot = async (req, res, next) => {};
 }
 
-module.exports = ItemController;
+module.exports = BotController;

@@ -1,11 +1,11 @@
 const { connect } = require("mongoose");
 const { currentEnv } = require("../config");
 const { mongoDB } = currentEnv;
-const DbURI = `${mongoDB.uri}/${mongoDB.dbName}`;
+const DbURI = `${mongoDB.uri}`;
 
 const conn = connect(DbURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log("[Mongoose] DB is Connected");
+    console.log(`[Mongoose] DB:${mongoDB.dbName} is Connected`);
     console.log("--------------------");
   })
   .catch((err) => {

@@ -1,8 +1,11 @@
-const { Client, Intents } = require("discord.js");
+const { Client, Intents, MessageButton } = require("discord.js");
 const COMMANDS = require("./commands.js");
 const distube = require("./distube");
+const plusOneWord = require("./functions/entertaiment/count/plusOneWord");
 
 const bot = ({ repositoresConnection = {} }) => {
+  const { ServerRepositories } = repositoresConnection;
+
   const client = new Client({
     intents: [
       Intents.FLAGS.GUILDS,
@@ -20,6 +23,33 @@ const bot = ({ repositoresConnection = {} }) => {
   });
   client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
+
+    plusOneWord({
+      repositoresConnection,
+      text: message.content,
+      serverId: message.guild.id,
+    });
+
+    ServerRepositories.getOneServerByServerId({
+      serverId: message.guildId,
+    }).then((res) => {
+      if (!res.length) {
+        const serverId = message.guild.id;
+        const serverName = message.guild.name;
+        const ownerId = message.guild.ownerId;
+        ServerRepositories.createOneServer({
+          body: {
+            serverId: serverId,
+            serverName: serverName,
+          },
+        }).then((res) => {
+          message.channel.send(
+            `Server **[${serverName}]** has been registered. Owner: <@${ownerId}>`
+          );
+        });
+      }
+    });
+
     const allKeys = Object.keys(COMMANDS);
     if (message.content.startsWith(COMMAND_START)) {
       const COMMAND_FUNCTION = message.content.split(" ")[1];

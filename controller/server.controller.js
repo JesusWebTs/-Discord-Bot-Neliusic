@@ -1,9 +1,9 @@
-const { UsersRepositories } = require("../repositories");
+const { ServerRepositories } = require("../repositories");
 
-class ItemController {
-  static getOneBot = async (req, res, next) => {
+class ServerController {
+  static getOneServer = async (req, res, next) => {
     const { id } = req.params;
-    return UsersRepositories.getOneUsers({ id })
+    return ServerRepositories.getOneItem({ id })
       .then((item) => {
         if (item) {
           return res.status(200).json(item);
@@ -19,8 +19,8 @@ class ItemController {
       });
   };
 
-  static getAllBot = async (req, res, next) => {
-    return UsersRepositories.getAllUsers()
+  static getAllServer = async (req, res, next) => {
+    return ServerRepositories.getAllItem()
       .then((items) => {
         if (items) {
           return res.status(200).json(items);
@@ -36,9 +36,9 @@ class ItemController {
       });
   };
 
-  static createOneBot = async (req, res, next) => {
+  static createOneServer = async (req, res, next) => {
     const { body } = req;
-    return UsersRepositories.createOneUsers({ body })
+    return ServerRepositories.createOneItem({ body })
       .then((data) => {
         if (data) {
           return res.status(201).json(data);
@@ -54,8 +54,8 @@ class ItemController {
       });
   };
 
-  static updateOneBot = async (req, res, next) => {};
-  static deleteOneBot = async (req, res, next) => {};
+  static updateOneServer = async (req, res, next) => {};
+  static deleteOneServer = async (req, res, next) => {};
 }
 
-module.exports = ItemController;
+module.exports = ServerController;

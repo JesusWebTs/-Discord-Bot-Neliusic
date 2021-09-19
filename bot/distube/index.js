@@ -7,7 +7,7 @@ module.exports = (client) => {
     leaveOnEmpty: false,
     emptyCooldown: 0,
     leaveOnFinish: false,
-    leaveOnStop: true,
+    leaveOnStop: false,
   });
 
   const status = (queue) =>

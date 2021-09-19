@@ -3,7 +3,7 @@ module.exports = {
   HOST: "localhost",
   mongoDB: {
     dialect: "mongodb",
-    dbName: "items-pwa-dev",
-    uri: "mongodb://127.0.0.1:27017",
+    dbName: "Neliusic-dev",
+    uri: "mongodb://127.0.0.1:27017/Neliusic-dev",
   },
 };

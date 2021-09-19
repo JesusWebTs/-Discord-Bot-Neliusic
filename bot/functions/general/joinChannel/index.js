@@ -1,6 +1,6 @@
 const { joinVoiceChannel } = require("@discordjs/voice");
 
-module.exports = async ({ message }) => {
+module.exports = async ({ message, client }) => {
   const userVoiceChannel = message.member.voice.channel;
   const botVoiceChannel = message.guild.me.voice.channel;
   const permissions = userVoiceChannel.permissionsFor(message.client.user);
@@ -19,4 +19,5 @@ module.exports = async ({ message }) => {
     guildId: message.guild.id,
     adapterCreator: message.guild.voiceAdapterCreator,
   });
+  return true;
 };

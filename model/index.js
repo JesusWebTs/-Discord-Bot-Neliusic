@@ -1,5 +1,9 @@
-const ItemModel = require("./user.model");
+const UsersModel = require("./user.model");
+const BotModel = require("./bot.model");
+const ServerModel = require("./server.model");
 
 module.exports = {
-  ItemModel,
+  UsersModel,
+  BotModel,
+  ServerModel,
 };

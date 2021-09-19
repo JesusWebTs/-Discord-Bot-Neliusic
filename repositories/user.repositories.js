@@ -1,33 +1,33 @@
-const { ItemModel } = require("../model");
+const { UsersModel } = require("../model");
 
-class ItemRepositories {
-  static getOneItem = async ({ id }) => {
+class UsersRepositories {
+  static getOneUsers = async ({ id }) => {
     try {
-      return ItemModel.find({ _id: id });
+      return UsersModel.find({ _id: id });
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;
     }
   };
-  static getAllItem = async () => {
+  static getAllUsers = async () => {
     try {
-      return ItemModel.find();
+      return UsersModel.find();
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;
     }
   };
   
-  static createOneItem = async ({ body }) => {
+  static createOneUsers = async ({ body }) => {
     try {
-      return ItemModel.create(body);
+      return UsersModel.create(body);
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;
     }
   };
-  static updateOneItem = async ({ id, body }) => {};
-  static deleteOneItem = async ({ id }) => {};
+  static updateOneUsers = async ({ id, body }) => {};
+  static deleteOneUsers = async ({ id }) => {};
 }
 
-module.exports = ItemRepositories;
+module.exports = UsersRepositories;

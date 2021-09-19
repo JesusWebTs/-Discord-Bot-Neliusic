@@ -1,33 +1,33 @@
-const { ItemModel } = require("../model");
+const { BotModel } = require("../model");
 
 class ItemRepositories {
-  static getOneItem = async ({ id }) => {
+  static getOneBot = async ({ id }) => {
     try {
-      return ItemModel.find({ _id: id });
+      return BotModel.find({ _id: id });
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;
     }
   };
-  static getAllItem = async () => {
+  static getAllBot = async () => {
     try {
-      return ItemModel.find();
+      return BotModel.find();
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;
     }
   };
-  
-  static createOneItem = async ({ body }) => {
+
+  static createOneBot = async ({ body }) => {
     try {
-      return ItemModel.create(body);
+      return BotModel.create(body);
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;
     }
   };
-  static updateOneItem = async ({ id, body }) => {};
-  static deleteOneItem = async ({ id }) => {};
+  static updateOneBot = async ({ id, body }) => {};
+  static deleteOneBot = async ({ id }) => {};
 }
 
 module.exports = ItemRepositories;
