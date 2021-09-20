@@ -6,9 +6,7 @@ const ServerSchema = new Schema({
   anouncementChannelId: "String",
   countWords: {
     listWords: [],
-    words: {
-      wordId: "number",
-    },
+    words: {},
   },
   commandList: {
     userId: {
