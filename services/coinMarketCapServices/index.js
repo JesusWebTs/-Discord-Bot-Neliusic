@@ -30,7 +30,7 @@ class CoinMarketcapServices {
     )
       .then((res) => res.data)
       .catch((err) => {
-        /* console.log("[Node Services Error]", err.message); */
+        /* console.log("[Node Error Services]", err.message); */
         return {
           status: 404,
           error: true,

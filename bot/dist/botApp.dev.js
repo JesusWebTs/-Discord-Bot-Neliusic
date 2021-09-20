@@ -19,8 +19,8 @@ var bot = function bot(_ref) {
   var ServerRepositories = repositoresConnection.ServerRepositories;
   var client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, "GUILDS", "GUILD_VOICE_STATES", "GUILD_MESSAGES"]
-  }); //distube(client);
-
+  });
+  distube(client);
   var COMMAND_START = ".n";
   client.on("ready", function () {
     console.log("[Niusic] I'm ready for commands!");

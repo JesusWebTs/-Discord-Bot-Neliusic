@@ -16,7 +16,7 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
     ],
   });
 
-  //distube(client);
+  distube(client);
   const COMMAND_START = ".n";
   client.on("ready", () => {
     console.log("[Niusic] I'm ready for commands!");
