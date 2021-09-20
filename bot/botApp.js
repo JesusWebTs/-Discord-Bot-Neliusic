@@ -3,7 +3,7 @@ const COMMANDS = require("./commands.js");
 const distube = require("./distube");
 const plusOneWord = require("./functions/entertaiment/count/plusOneWord");
 
-const bot = ({ repositoresConnection = {} }) => {
+const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
   const { ServerRepositories } = repositoresConnection;
 
   const client = new Client({
@@ -16,19 +16,13 @@ const bot = ({ repositoresConnection = {} }) => {
     ],
   });
 
-  distube(client);
+  //distube(client);
   const COMMAND_START = ".n";
   client.on("ready", () => {
     console.log("[Niusic] I'm ready for commands!");
   });
   client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
-
-    plusOneWord({
-      repositoresConnection,
-      text: message.content,
-      serverId: message.guild.id,
-    });
 
     ServerRepositories.getOneServerByServerId({
       serverId: message.guildId,
@@ -65,10 +59,17 @@ const bot = ({ repositoresConnection = {} }) => {
           allKeys,
           args,
           repositoresConnection,
+          servicesConnection,
         });
       } else {
         message.channel.send('Command dont exist, ".n help" for help.');
       }
+    } else {
+      plusOneWord({
+        repositoresConnection,
+        text: message.content,
+        serverId: message.guild.id,
+      });
     }
   });
 

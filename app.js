@@ -4,11 +4,15 @@ const morgan = require("morgan");
 const { currentEnv } = require("./config");
 const router = require("./routes");
 const repositories = require("./repositories");
+const services = require("./services");
 const botStart = require("./bot");
 
 require("./model/_conn")
   .then(() => {
-    botStart({ repositoresConnection: repositories });
+    botStart({
+      repositoresConnection: repositories,
+      servicesConnection: services,
+    });
   })
   .catch((err) => {
     console.log("[Node Error]", err);

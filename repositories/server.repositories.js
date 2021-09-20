@@ -47,9 +47,15 @@ class ServerRepositories {
   static updateOneServerByParam = async ({ param, body, add = true }) => {
     const set = add ? "$set" : "$unset";
     try {
-      return ServerModel.updateOne(param, {
-        [`${set}`]: body,
-      });
+      return ServerModel.updateOne(
+        param,
+        {
+          [`${set}`]: body,
+        },
+        {
+          upsert: true,
+        }
+      );
     } catch (err) {
       console.log("[Node Error] Repositorie error", err);
       return false;

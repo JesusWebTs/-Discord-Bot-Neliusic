@@ -1,8 +1,8 @@
 const bot = require("./botApp.js");
 const { DISCORD_KEYS } = require("./config/api-discord-keys.js");
 
-const botStart = ({ repositoresConnection }) => {
-  const client = bot({ repositoresConnection });
+const botStart = ({ repositoresConnection, servicesConnection }) => {
+  const client = bot({ repositoresConnection, servicesConnection });
   client
     .login(DISCORD_KEYS.LOGIN_TOKEM)
     .then(() => {

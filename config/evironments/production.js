@@ -1,7 +1,6 @@
 const { config } = require("dotenv");
 config();
 
-
 module.exports = {
   PORT: process.env.PORT,
   HOST: process.env.HOST,
@@ -9,5 +8,10 @@ module.exports = {
     dialect: "mongodb",
     dbName: process.env.DB_NAME,
     uri: process.env.DB_URI.replace("<DatabaseName>", process.env.DB_NAME),
+  },
+  services: {
+    coinMarketCap: {
+      API_KEY: process.env.CNC_API_KEY,
+    },
   },
 };

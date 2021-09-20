@@ -8,4 +8,5 @@ module.exports = {
   ...financesCommands.commands,
   ...generalCommands.commands,
   ...musicCommands.commands,
+  ...financesCommands.commands,
 };
