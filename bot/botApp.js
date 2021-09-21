@@ -23,7 +23,6 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
   });
   client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
-
     ServerRepositories.getOneServerByServerId({
       serverId: message.guildId,
     }).then((res) => {
@@ -46,6 +45,14 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
             `Server **[${serverName}]** has been registered. Owner: <@${ownerId}>`
           );
         });
+      } else {
+        if (!message.content.startsWith(COMMAND_START)) {
+          plusOneWord({
+            repositoresConnection,
+            text: message.content,
+            serverId: message.guild.id,
+          });
+        }
       }
     });
 
@@ -69,12 +76,6 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
       } else {
         message.channel.send('Command dont exist, ".n help" for help.');
       }
-    } else {
-      plusOneWord({
-        repositoresConnection,
-        text: message.content,
-        serverId: message.guild.id,
-      });
     }
   });
 
