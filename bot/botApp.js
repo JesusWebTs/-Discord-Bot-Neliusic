@@ -19,7 +19,7 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
   distube(client);
   const COMMAND_START = ".n";
   client.on("ready", () => {
-    console.log("[Niusic] I'm ready for commands!");
+    console.log("[Neliusic] I'm exited and ready!");
   });
   client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
@@ -45,14 +45,12 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
             `Server **[${serverName}]** has been registered. Owner: <@${ownerId}>`
           );
         });
-      } else {
-        if (!message.content.startsWith(COMMAND_START)) {
+      } else {        
           plusOneWord({
             repositoresConnection,
             text: message.content,
             serverId: message.guild.id,
-          });
-        }
+          });        
       }
     });
 

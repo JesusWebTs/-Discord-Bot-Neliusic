@@ -27,6 +27,7 @@ app
   .use(cors())
   .use(express.urlencoded({ extended: true }))
   .use(express.json())
-  .use("/api", router);
+  .use("/api", router)
+  .use("/", (req,res)=>res.json({Neliusic: "I'm Ready"}))
 
 module.exports = { app };
