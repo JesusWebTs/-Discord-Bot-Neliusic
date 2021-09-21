@@ -35,6 +35,11 @@ const bot = ({ repositoresConnection = {}, servicesConnection = {} }) => {
           body: {
             serverId: serverId,
             serverName: serverName,
+            countWords: {
+              words: {
+                Neliusic: 1,
+              },
+            },
           },
         }).then((res) => {
           message.channel.send(

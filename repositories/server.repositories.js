@@ -37,6 +37,7 @@ class ServerRepositories {
   };
 
   static createOneServer = async ({ body }) => {
+    console.log(body);
     try {
       return ServerModel.create(body);
     } catch (err) {

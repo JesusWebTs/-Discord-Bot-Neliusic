@@ -49,7 +49,12 @@ var bot = function bot(_ref) {
                 ServerRepositories.createOneServer({
                   body: {
                     serverId: serverId,
-                    serverName: serverName
+                    serverName: serverName,
+                    countWords: {
+                      words: {
+                        Neliusic: 1
+                      }
+                    }
                   }
                 }).then(function (res) {
                   message.channel.send("Server **[".concat(serverName, "]** has been registered. Owner: <@").concat(ownerId, ">"));
