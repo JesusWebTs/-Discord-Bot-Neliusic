@@ -63,7 +63,7 @@ module.exports = (client) => {
       textChannel.send(`An error encountered: ${e.slice(0, 2000)}`);
     })
     .on("finish", (queue) => queue.textChannel.send("Finish queue!"))
-    .on("finishSong", (queue) => queue.textChannel.send("Finish song!"))
+    /* .on("finishSong", (queue) => queue.textChannel.send("Finish song!")) */
     .on("disconnect", (queue) => queue.textChannel.send("Disconnected!"))
     .on("empty", (queue) => queue.textChannel.send("Empty!"));
 };
